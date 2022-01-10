@@ -1,0 +1,23 @@
+.nav-links {
+    margin: 0;
+    padding: 1rem;
+    background-color: rgb(206, 105, 105);
+}
+
+.nav-links li {
+    display: inline;
+    margin: 10rem;
+    padding: 2rem;
+    color: #292929;
+    font-size: large;
+}
+
+.nav-links a.active {
+    color: #6cf;
+}
+
+.nav-links a {
+    border: 5px solid transparent;
+    color: #292929;
+    text-decoration: none;
+}
