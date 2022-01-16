@@ -1,0 +1,12 @@
+npm init
+npm install express --save
+
+//to install all dependencies saved in package.json
+npm install 
+
+//for automatic server restart after file changes
+//addtionally add "start": "nodemon app.js" in the scripts field in package.json
+npm install nodemon --save-dev
+
+//for ...
+npm install body-parser --save

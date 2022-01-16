@@ -1,0 +1,12 @@
+1.
+useEffect runs AFTER JSX. Is that so for any hook?
+
+2.
+in change function of useState: eg:
+const [state, setState] = useState(true);
+setState(!state)
+or
+setState(inp => !inp)
+?
+
+3.
