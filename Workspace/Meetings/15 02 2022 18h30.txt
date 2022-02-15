@@ -1,0 +1,23 @@
+What we did:
+
+	Antmann: Changed workspace files (see github)
+
+What we will do:
+
+	Establish a wage for 2-4hrs/week for 12€/hour
+
+	When we do a meeting, we write everything down (what we did, what we will do)
+
+	We will focus on the adding sources and saving sensitive sources
+
+	Til Lione:
+
+		1: Create database skeleton part for info
+		2: Wordpress basic website to add and delete entries: Author, Title of document, Creation date, Source link
+		3: looking up a lil bit on how to extract info from webpage
+
+	Ant Mann:
+		*Be very fixed about the fields in database
+			1: Define basic information
+			2: Define user interface and process
+				2-1:User interface for adding a series of sources
