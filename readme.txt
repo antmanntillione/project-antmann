@@ -11,3 +11,6 @@ npm install --save react-router-dom@5 --save-exact
 
 #install style (eg for drawer):
 npm install --save react-transition-group
+
+#for http requests
+npm install axios --save

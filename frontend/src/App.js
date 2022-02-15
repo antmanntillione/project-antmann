@@ -1,4 +1,5 @@
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Header from "./sources/Header"
 import Footer from "./sources/Footer"
@@ -19,10 +20,10 @@ const App = () => {
       <Route path="/sources" exact>
         <Sources className ="App-header"/>
       </Route>
-      <Route path="/persons" exact>
+      <Route path="/extracts" exact>
         <Persons></Persons>
       </Route>
-      <Route path="/groups" exact>
+      <Route path="/thesis" exact>
         <Groups></Groups>
       </Route>
       <Redirect to="/"/>
@@ -34,9 +35,8 @@ const App = () => {
       <div className="App">
         <Header text="Welcome to SourceFlow!"/>
           <Navigation/>
-          
           {routes}
-        <Footer text = "Made by Tillione"/>
+        <Footer text = "Made by Antmann"/>
       </div>
     </Router>
   );

@@ -11,10 +11,10 @@ const Navigation = props => {
                 <NavLink to="/sources">Sources</NavLink>
             </li>
             <li>
-                <NavLink to="/persons">Persons</NavLink>
+                <NavLink to="/extracts">Extracts</NavLink>
             </li>
             <li>
-                <NavLink to="/groups">Groups</NavLink>
+                <NavLink to="/thesis">Thesis</NavLink>
             </li>
         </ul>
     </React.Fragment>
