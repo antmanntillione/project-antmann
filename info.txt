@@ -10,3 +10,6 @@ mongodb user:
 testione
 testmann
 
+Wordpress:
+Current domain: https://sourceflow973677302.wordpress.com/
+Login with Gmail account
