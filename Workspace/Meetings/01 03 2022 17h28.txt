@@ -1,0 +1,24 @@
+What we did:
+
+	Not much
+	
+What we will do:
+
+
+	Same objectives as last meeting: adding and saving sources in database
+	
+	Idea: allowing contributors to add sources to the register, code the programs that support websites
+	It's necessary bc of the volume of the sources
+	Accounts implementations
+	Source verification when added, gets a pending state
+	Who approves the sources and on what criterias could it be accepted
+	
+Objectives
+	
+	Til Lione:
+		Nothing
+		
+	Ant Mann:
+			1: Define web interface
+			2: translate specs document
+			3: update specs document and add the variables to add, buttons and menus
