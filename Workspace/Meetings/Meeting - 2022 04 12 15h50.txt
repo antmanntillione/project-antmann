@@ -1,0 +1,24 @@
+	QUESTIONS
+
+	DONE (last time)
+
+	SUBJECTS
+	
+		A T: 
+		Decided that we start smaller by coding the app from scratch, because to pay for all the plugins is too expensive
+		
+		T: Wordpress team contacted
+			answer wasn't much of information "german forum"
+		Friend contacted, he said the app is more a database and backend than frontend
+		So we should start from scratch
+
+	DONE (now)
+	
+	
+	
+	TO DO (for next time)
+	
+		Action plan
+		
+		T:
+			Ask with the choices of the languages

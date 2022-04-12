@@ -1,8 +1,0 @@
-To see: 
-	A: Can we have sub-variables of a mother variable? Is it class? noted this in doc 1
-
-Done
-	
-
-To do:
-	

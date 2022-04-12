@@ -1,0 +1,28 @@
+	QUESTIONS
+
+	DONE (last time)
+
+	SUBJECTS
+	
+	Cost of wordpress subscription and plugins
+	subrcription is 15 days trial, we can test it and get it refunded if it doesn't suit our specs
+	2 possibilities:
+		we start small by using a third party website maker (wordpress) and plugins
+		or
+		we start smaller by coding the app from scratch
+	
+	Goal is to make something visible for people to believe in the project
+	First option is faster than the second, but the second will be used when we will have a larger team
+
+	DONE
+	
+		Wordpress team contacted
+	
+	TO DO (for next time)
+	
+		Same than last meeting
+		A: 
+			look up the database plugins from wordpress
+			which trail to go?
+		
+		We wait for answers from wordpress

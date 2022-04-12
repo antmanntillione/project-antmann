@@ -1,0 +1,63 @@
+To see: 
+	A: Can we have sub-variables of a mother variable? Is it class? noted this in doc 1 - CANCELLED
+	A: Place a patent?
+
+	DONE last time
+	
+		(see doc 1, 2, see github)
+
+	SUBJECTS
+	
+		A: presentation of workspace (how it works)
+		overview on doc 1
+		A T: How to prove source haven't been falsified (T: e.g example hunter biden laptop)
+			Proof by the script (showing the code)
+			Reverse the charge of the proof (the source author will have to prove that sourceflow copy was modified from his original?
+			Based on trust of Sourceflow?
+			
+		T: If a website is taken down, we can say "then why did you take it down"?
+			T: Prove on internet organization the links existed
+			
+		T: If sourceflow is taken down
+			A: Putting on tor browser
+			T: Blockchain apps cannot be taken down? making it a blockchain app
+				Scientists could be using blockchain if its the case
+		
+		T: Whats a source? e.g "a journalist says that trump said that..." what entries do we prove as a who?
+	
+			A: 
+				Source is a document
+				The author of a source will have its name in the "who" field
+				Every basic information fields will have many entries (in press article: press company name + journalist + ...)
+				if it's text, the journalist said that trump said that... = secondary source, the author is the journalist, not trump
+				If a source is emmited the first time, it's a primary source, if it's the second time, it's being cited, so it's a secondary source
+				If the speech of trump is text, author is the journalist
+				If the speech is a video or audio (eg: interview), the broadcaster, the interviewer, and interviewee are authors
+					NOTE: the authors can be identified
+					
+					If the speech of trump is text, author is the journalist
+				if its a speech (who said what), Trump saying something in a video, the video is the source
+				The journalist that shares the video in a press article is the secondary source of trumps speech video
+				
+				if it's a video/audio/picture and is the first time you see this video/audio/picture, then it's the primary source
+				
+			A T: 
+				The arguments exists only if it has sharers
+				If the sharer is a person from sourceflow, it has a source associated with it, which is from "sourceflow" website, and the sharer is the person from sourceflow that said it
+				A: Argument: element in thesis
+				premise: daughter argument
+				Conclusion: mother argument
+
+			A: you never delete a source
+			
+			Is mentioning quotations in every sources heavy?
+			
+			Source saving: when a source changes remotely, only information that has changed be stored
+	TO DO
+	
+		A:
+			Finish "models" part
+			Define all the entries
+			Yellow highlight the temporary/non approved/unsure stuff
+		T: 
+			Start programming
