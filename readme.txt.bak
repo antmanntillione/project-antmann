@@ -37,5 +37,5 @@ https://github.com/facebook/create-react-app/issues/11174
 in package.json move react-scripts to devDependencies
 npm audit --production
 
-# 'React' must be in scope when using JSX
+#'React' must be in scope when using JSX
 https://dev.to/chandelieraxel/why-do-react-need-to-be-in-scope-for-jsx-3hen

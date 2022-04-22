@@ -1,0 +1,11 @@
+Proove the realness of sources:
+
+Example: Some pdf document (some study) oder html document (copy of some website).
+
+Thesis: A given source is the true copy of an original document which sourceflow did not create.
+
+What has to be proved:
+
+1. The original document existed on some external platform.
+2. The document in our database is the true copy of the original document.
+3. The document in our database was never edited since copied.

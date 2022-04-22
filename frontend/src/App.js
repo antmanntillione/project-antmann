@@ -1,42 +1,32 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
-import Header from "./sources/Header"
-import Footer from "./sources/Footer"
-import Navigation from "./sources/Navigation"
-
+// eslint-disable-next-line
 import { BrowserRouter as Router, Route, Redirect, Switch } from "react-router-dom";
 
-import Sources from "./sources/sources/Sources"
-import Persons from "./sources/persons/Persons"
-import Groups from "./sources/groups/Groups"
+import Header from "./sources/tools-menu/Header"
+import Footer from "./sources/tools-menu/Footer"
 
+import SourceMenu from "./sources/source-menu/SourceMenu"
+import SourceContentMenu from "./sources/source-content-menu/SourceContentMenu"
+import ThesisMenu from "./sources/thesis-menu/ThesisMenu"
 
 const App = () => {
 
   let routes = (
     <Switch>
-      <Route path="/" exact></Route>
-      <Route path="/sources" exact>
-        <Sources className ="App-header"/>
-      </Route>
-      <Route path="/extracts" exact>
-        <Persons></Persons>
-      </Route>
-      <Route path="/thesis" exact>
-        <Groups></Groups>
-      </Route>
-      <Redirect to="/"/>
+      <Redirect to="/" />
     </Switch>
   );
 
   return (
     <Router>
       <div className="App">
-        <Header text="Welcome to SourceFlow!"/>
-          <Navigation/>
-          {routes}
-        <Footer text = "Made by Antmann"/>
+        <Header text="Welcome to SourceFlow!" />
+        {routes}
+        <SourceMenu />
+        <SourceContentMenu />
+        <ThesisMenu />
+        <Footer text="Made by Antmann" />
       </div>
     </Router>
   );
