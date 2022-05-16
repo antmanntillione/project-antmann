@@ -1,5 +1,11 @@
 #how to create new project:
+
+#javascript/React project
 npx create-react-app my-new-app
+
+OR directly create typescript/React project:
+npx create-react-app my-app --template typescript
+
 cd my-new-app
 npm start
 
@@ -8,6 +14,7 @@ npm install react-bootstrap bootstrap@5.1.3
 
 #install routing:
 npm install --save react-router-dom@5 --save-exactnp
+npm install --save-dev react-router-dom
 
 #install style (eg for drawer):
 npm install --save react-transition-group
@@ -27,6 +34,8 @@ https://kinsta.com/de/blog/wordpress-tabellen-plugins/
 #lokale datenbank mit xampp
 https://www.heise.de/download/blog/Wordpress-mit-XAMPP-auf-dem-eigenen-Rechner-ausprobieren-3286703
 
+#install typescript 
+npm install typescript --save-dev
 
 
 

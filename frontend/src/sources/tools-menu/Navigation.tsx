@@ -3,7 +3,7 @@ import './Navigation.css';
 import { NavLink } from "react-router-dom";
 import React from 'react';
 
-const Navigation = props => {
+const Navigation = (props: any) => {
   return (
       <React.Fragment>
         <ul className="nav-links"> 

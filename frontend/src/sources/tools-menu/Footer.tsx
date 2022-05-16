@@ -1,6 +1,10 @@
 import "./Footer.css"
 
-const Footer = props => {
+interface Footer {
+    text: string
+}
+
+const Footer = (props: Footer) => {
     return <footer className="footer">
         {props.text}
     </footer>
