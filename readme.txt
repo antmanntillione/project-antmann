@@ -11,6 +11,7 @@ npm start
 
 #install bootstrap
 npm install react-bootstrap bootstrap@5.1.3
+npm install react-bootstrap bootstrap
 
 #install routing:
 npm install --save react-router-dom@5 --save-exactnp
