@@ -3,6 +3,7 @@ import "./AddContent.css"
 import { useState } from "react"
 import Button from "react-bootstrap/Button"
 import Modal from "react-bootstrap/Modal"
+import AddContentForm from "./AddContentForm"
 
 const AddContent = (props: any) => {
     const [show, setShow] = useState(false);
@@ -12,22 +13,23 @@ const AddContent = (props: any) => {
 
     return (
         <>
-            <h2>Add content</h2>
-            <Button variant="primary" onClick={handleShow}>
-                Add content
+            <Button variant="success" onClick={handleShow}>
+                Add Content
             </Button>
 
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
                     <Modal.Title>Add your content!</Modal.Title>
                 </Modal.Header>
-                <Modal.Body>Content Form</Modal.Body>
+                <Modal.Body>
+                    <AddContentForm />
+                </Modal.Body>
                 <Modal.Footer>
                     <Button variant="secondary" onClick={handleClose}>
-                        Close
+                        Cancel
                     </Button>
                     <Button variant="primary" onClick={handleClose}>
-                        Save
+                        Add Content
                     </Button>
                 </Modal.Footer>
             </Modal>
