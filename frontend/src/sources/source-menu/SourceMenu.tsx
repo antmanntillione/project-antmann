@@ -50,6 +50,8 @@ const SourceMenu = (props: any) => {
 
   let currentSources = getSources()
 
+  //Note the key prop in SourceItem (seems to be necessary. key prop is a special prop which doesnt have to be specified in the SourceItem Interface)
+
   return (
     <Table striped hover>
       <thead>
@@ -65,6 +67,7 @@ const SourceMenu = (props: any) => {
       <tbody>
         {currentSources.map((item, index) => {
           return <SourceItem
+            key={item.id}
             id={item.id}
             title={item.title}
             url={item.url}
@@ -73,7 +76,6 @@ const SourceMenu = (props: any) => {
             accordion_index={index}
           />
         })}
-
       </tbody>
     </Table>
   );

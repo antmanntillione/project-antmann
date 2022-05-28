@@ -38,6 +38,9 @@ https://www.heise.de/download/blog/Wordpress-mit-XAMPP-auf-dem-eigenen-Rechner-a
 #install typescript 
 npm install typescript --save-dev
 
+#install react-native-datefield
+npm install react-native-datefield --save-dev
+
 
 
 ### ERRORS AND SOLUTIONS ###
