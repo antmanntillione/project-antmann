@@ -40,6 +40,8 @@ npm install typescript --save-dev
 
 #install react-native-datefield
 npm install react-native-datefield --save-dev
+#or
+npm install react-date-picker
 
 
 

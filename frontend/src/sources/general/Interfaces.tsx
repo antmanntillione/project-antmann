@@ -1,0 +1,3 @@
+interface NewContentInterface {}
+
+export {}

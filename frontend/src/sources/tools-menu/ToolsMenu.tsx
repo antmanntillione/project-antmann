@@ -10,8 +10,11 @@ import Container from "react-bootstrap/Container"
 import SearchBar from "./SearchBar";
 import AddContent from "./AddContent"
 
+interface ToolsMenuInterface {
+    addContent?: any
+}
 
-const ToolsMenu = (props: any) => {
+const ToolsMenu = (props: ToolsMenuInterface) => {
     return (
         <Accordion defaultActiveKey="0">
             <Accordion.Item eventKey="0">
@@ -25,7 +28,7 @@ const ToolsMenu = (props: any) => {
                                 <SearchBar />
                             </Col>
                             <Col xs={6} md={4}>
-                                <AddContent />
+                                <AddContent addContent={props.addContent}/>
                             </Col>
                         </Row>
                     </Container>

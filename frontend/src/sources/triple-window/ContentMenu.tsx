@@ -10,7 +10,11 @@ import Col from "react-bootstrap/Col"
 
 import Accordion from "react-bootstrap/Accordion"
 
-const ContentMenu = (props: any) => {
+interface ContentMenuInterface {
+  sourcesData: any
+}
+
+const ContentMenu = (props: ContentMenuInterface) => {
   return (
     <><Accordion defaultActiveKey="0">
       <Accordion.Item eventKey="0">
@@ -18,7 +22,7 @@ const ContentMenu = (props: any) => {
           Sources Menu
         </Accordion.Header>
         <Accordion.Body>
-          <SourceMenu />
+          <SourceMenu data={props.sourcesData}/>
         </Accordion.Body>
       </Accordion.Item>
       <Accordion.Item eventKey="1">
