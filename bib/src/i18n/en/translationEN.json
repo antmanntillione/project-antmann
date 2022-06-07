@@ -1,0 +1,239 @@
+{
+    "menu": {
+        "explainer": "Explain",
+        "datasets": "Datasets",
+        "rating": "Ratings",
+        "settings": "Settings",
+        "logout": "Logout"
+    },
+
+    "ratings": {
+        "numberOfRatings": "Number of Ratings",
+        "numberOfRaters": "Number of Raters",
+        "averageRating": "Average Rating",
+        "xai_model" : "XAI Model",
+        "classifier": " Classifier",
+        "dataset": "Dataset",
+        "creator": "Creator",
+        "rating": "Rating",
+        "comment": "Comment",
+        "change_view_to_global": "View all Ratings",
+        "change_view_to_user": "View own Ratings",
+        "statistics": "Statistics",
+        "average_ratings_matrix": "Average Ratings",
+        "all_ratings": "User Ratings",
+        "csv": "Download as CSV"
+    },
+
+    "datasets" : {
+        "name": "Name",
+        "num_instances": "No. of instances",
+        "num_images": "No. of images",
+        "feature_names": "Feature names",
+        "num_samples" : "No. of samples",
+        "compatible_classifiers" : "Compatible classifiers",
+        "upload_date": "Upload date",
+        "dataset_type": "Dataset Type",
+        "georeferenced": "Georeferenced",
+        "sort_by_data": "Sort by date",
+        "sort_by_name": "Sort by name",
+        "delete_dialogue": {
+            "tooltip_delete" : "Delete dataset",
+            "title": "Delete {{dataset}}",
+            "body": "This will remove the dataset as well as all ratings. To confirm please enter the name of the dataset into the field below.",
+            "close": "Close",
+            "delete": "Delete",
+            "confirmDatasetName": {
+                "dataset_name": "Dataset name",
+                "enter_name": "Enter dataset name",
+                "confirm_name_required": "Please confirm the dataset name"
+            }
+        },
+        "rename_dialogue": {
+            "tooltip_rename" : "Rename dataset",
+            "title": "Rename {{dataset}}",
+            "body": "This will rename the dataset as well as all associated ratings.",
+            "close": "Close",
+            "rename": "Rename",
+            "dataset_name": "Dataset name",
+            "enter_name": "Enter a new dataset name",
+            "new_name_required": "A new name is required"
+        },
+        "compatibility_dialogue": {
+            "tooltip_change_compatibility" : "Edit the classifiers which are able to classify the dataset",
+            "title": "Change Compatibility for",
+            "body": "This will change the compatibility to classifiers. This only works if the classifier actually supports the dataset.",
+            "classifiers": "Select the compatible classifiers",
+            "close": "Close",
+            "submit": "Submit"
+        },
+        "upload_dialogue": {
+            "button_upload": "Upload a new dataset",
+            "tooltip_upload": "Upload a new dataset",
+            "title": "Upload a new dataset",
+            "body": "Please select the file you wish to upload and enter its feature names",
+            "close": "Close",
+            "upload": "Upload"
+        }
+
+    },
+
+    "settings" : {
+        "id": "ID",
+        "language": "Language",
+        "change_language": "Change language",
+        "user_management": "User management",
+        "user_settings":  "User settings",
+        "change_password": {
+            "change_password": "Change password",
+            "change_password_for": "Change password for {{user}}",
+            "incorrect_length": "The password length should be between 8 and 200 characters",
+            "no_match": "Your confirmed new password does not match the one you have given",
+            "confirm_password": "Confirm password",
+            "enter_new_password": "Please enter your new password",
+            "confirm_new_password": "Please confirm your new password",
+            "new_password": "New password",
+            "success": "Your Password has been changed"
+        },
+        "delete_user": {
+            "delete_user": "Delete user {{user}}",
+            "username_wrong": "The username you have given is wrong",
+            "enter_username": "Enter the username here"
+        },
+        "add_user": {
+            "username": "Username",
+            "username_wrong": "The username must contain between 4 and 20 characters",
+            "add_user_description": "Add a new user",
+            "add_user": "Add user",
+            "enter_username": "Please enter the username here",
+            "user_language": "Select the user language",
+            "one_time_password": "Your one-time password"
+        },
+        "user": "User",
+        "admin": "Admin",
+        "german": "German",
+        "english": "English",
+        "username": "Username",
+        "enter_new_username": "Please enter the username of the user you would like to add",
+        "privilege_level": "Privilege level"
+    },
+
+    "login": {
+        "title": "Arkansas - Login",
+        "username": "Username",
+        "password": "Password",
+        "login": "Login"
+    },
+
+    "formFields": {
+        "datasetName": {
+            "dataset_name": "Dataset Name",
+            "enter_name": "Enter a dataset name",
+            "dataset_name_required": "Please provide a dataset name"
+        },
+        "featureNames": {
+            "featureNames": "Feature names",
+            "enter_featureNames": "Enter feature names",
+            "featureNames_required": "Please provide the feature names",
+            "empty_feature": "Feature names cannot be empty"
+        },
+        "datasetUpload": {
+            "file": "Dataset file",
+            "file_required": "Please select the dataset file"
+        },
+        "datasetType":{
+            "options":{
+              "timeseries": "Time-series data",
+              "timeseries_georeferenced": "Time-series georeferenced data",
+              "image": "Image data"
+            },
+            "select_dataset_type": "Select a dataset type",
+            "dataset_type_required": "Please select a dataset type"
+        }
+    },
+    "explainer": {
+        "run_explainer": "Run explainer",
+        "classifier": {
+            "title": "Classifier selection",
+            "type": "Classifier type",
+            "compatible_dataset_type": {
+                "sub_title": "Compatible dataset type",
+                "options": {
+                    "all": "All classifiers",
+                    "timeseries": "Time-series classifiers",
+                    "timeseries_georeferenced": "Time-series georeferenced classifiers",
+                    "image": "Image classifiers"
+                },
+                "available_clfs": "Available classifiers"
+            },
+            "compatible_datasets": "Compatible datasets",
+            "compatible_xai_models": "Compatible XAI Models",
+            "error": "Please select a classifier"
+        },
+        "global_local": {
+            "title": "Explanation type",
+            "local_name": "Local",
+            "global_name": "Global",
+            "error": "Please select an xplaination type",
+            "local_description": "A local explanation will only explain one instance",
+            "global_description": "A global explanation will explain multiple instances"
+        },
+        "xai_model": {
+            "title": "XAI Model selection",
+            "parameters": "Parameters",
+            "error": "Please select at least one XAI Model"
+        },
+        "dataset": {
+            "title": "Dataset selection",
+            "error": "Please select a dataset"
+        },
+        "instance": {
+            "instance_count": "Number of instances",
+            "instance_selection": "Select an instance to explain",
+            "title": "Instance selection",
+            "error": "Please select a instance"
+        },
+        "parameter": {
+            "title": "Parameter selection",
+            "error": "Please configure all parameters",
+            "background_dataset": "The number of background data samples that should be used to train the model. Passing the entire training dataset as data will give very accurate expected values, but it will be unreasonably expensive.",
+            "num_slices": "The number of slices the time series will be split into.",
+            "num_samples": "The size of the neighborhood data which will be created by randomly removing slices from the time series.",
+            "replacement_method": "The method of replacing the randomly removed slices with other data points (data points are either mean over slice range, mean of entire series or random noise)",
+            "num_steps": "The number of steps from reference values to the actual sample."
+        },
+        "results": {
+            "submit_success": "Your comment has been added",
+            "comment": "Comment",
+            "submitRating": "Submit",
+            "processing": "Processing your result",
+            "timestamp": "Time stamp",
+            "classification": "Classification",
+            "probability": "Prediction probability",
+            "ground_truth": "Ground truth",
+            "time_series_steps": "Time-series steps",
+            "relative_importance": "Relative importance",
+            "classification_model": "Classifier",
+            "xai_models": "XAI Model(s)",
+            "dataset": "Dataset",
+            "feature_names": "Feature names",
+            "response_time": "Response time",
+            "overall": "Overall",
+            "number_of_classifications": "Number of classifications",
+            "accuracy": "Accuracy",
+            "number_of_instances": "Number of instances",
+            "feature_importance_plot": "Feature importance plot",
+            "divergent_plot": "Divergent plot",
+            "features": "Features",
+            "selected_instance": "Selected instance",
+            "heat_plot": "Heat plot",
+            "mapping_on_instance": "Slice importance on instance",
+            "box_plots": "Box plots",
+            "force_plot": "Force Plot",
+            "modify_parameter": "Modify Parameters",
+            "error": "Classification error",
+            "classification_failed": "The classification of all selected instances failed. Please contact an admin for further assistance.",
+            "last_position": "Last position"
+        }
+    }
+}

@@ -1,0 +1,1 @@
+export { RatingsMenu } from "./menu";

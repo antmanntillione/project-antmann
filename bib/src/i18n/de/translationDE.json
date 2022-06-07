@@ -1,0 +1,243 @@
+{
+    "menu": {
+        "explainer": "XAI-Erklärungen",
+        "datasets": "Datensätze",
+        "rating": "Bewertungen",
+        "settings": "Einstellungen",
+        "logout": "Ausloggen"
+    },
+
+    "ratings": {
+        "numberOfRatings": "Anzahl Bewertungen",
+        "numberOfRaters": "Anzahl Bewerter",
+        "averageRating": "Durchschnittliche Bewertung",
+        "xai_model" : "XAI-Modell",
+        "classifier": "Klassifikator",
+        "dataset": "Datensatz",
+        "creator": "Ersteller",
+        "rating": "Bewertung",
+        "comment": "Kommentar",
+        "change_view_to_global": "Alle Bewertungen ansehen",
+        "change_view_to_user": "Eigene Bewertungen ansehen",
+        "statistics": "Statistiken",
+        "average_ratings_matrix": "Durchschnittliche Bewertungen",
+        "all_ratings": "Alle Bewertungen",
+        "csv": "Als CSV herunterladen"
+    },
+
+    "datasets" : {
+        "name": "Name",
+        "num_instances": "Anzahl Instanzen",
+        "num_images": "Anzahl Bildern",
+        "feature_names": "Feature-Namen",
+        "num_samples" : "Anzahl Samples",
+        "compatible_classifiers" : "Kompatible Klassifikatoren",
+        "upload_date": "Hochladedatum",
+        "dataset_type": "Datensatztyp",
+        "georeferenced": "Georeferenziert",
+        "sort_by_data": "Sortierung nach Datum",
+        "sort_by_name": "Sortierung nach Name",
+        "delete_dialogue": {
+            "tooltip_delete" : "Datensatz löschen",
+            "title": "{{dataset}} löschen",
+            "body": "Damit löschen Sie den Datensatz und alle zugehörigen Bewertungen. Bitte geben Sie den Namen des Datensatzes in das entsprechende Feld ein.",
+            "close": "Schließen",
+            "delete": "Löschen",
+            "confirmDatasetName": {
+                "dataset_name": "Name des Datensatzes",
+                "enter_name": "Geben Sie hier den Namen des Datensatzes ein",
+                "confirm_name_required": "Bitte bestätigen Sie den Datensatznamen"
+            }
+        },
+
+        "rename_dialogue": {
+            "tooltip_rename" : "Datensatz umbenennen",
+            "title": "{{dataset}} umbenennen",
+            "body": "Damit benennen Sie den gewünschten Datensatz um. Der Datensatzname wird auch in alten Bewertungen geändert.",
+            "close": "Schließen",
+            "rename": "Umbenennen",
+            "dataset_name": "Name des Datensatzes",
+            "enter_name": "Geben Sie hier den neuen Namen des Datensatzes ein",
+            "new_name_required": "Bitte geben Sie einen neuen Namen für den Datensatz an"
+        },
+
+        "compatibility_dialogue": {
+            "tooltip_change_compatibility" : "Editieren, welche Klassifikatoren diesen Datensatz klassifizieren können",
+            "title": "Kompatibilität ändern für",
+            "body": "Damit ändern Sie die Kompatibilität zu den Klassifikatoren, sofern die angegebenen Klassifikatoren den Datensatz klassifizieren können.",
+            "classifiers": "Wählen Sie die kompatiblen Klassifikatoren aus",
+            "close": "Schließen",
+            "submit": "Bestätigen"
+        },
+
+        "upload_dialogue": {
+            "button_upload": "Neuen Datensatz hochladen",
+            "tooltip_upload": "Ermöglicht das Hochladen eines neuen Datensatzes",
+            "title": "Einen neuen Datensatz hochladen",
+            "body": "Bitte wählen Sie die Datei, die den gewünschten Datensatz enthält, aus und geben Sie alle Feature-Namen an.",
+            "close": "Schließen",
+            "upload": "Hochladen"
+        }
+    },
+
+    "settings" : {
+        "id": "ID",
+        "language": "Sprache",
+        "change_language": "Anzeigesprache wechseln",
+        "user_management": "Benutzerverwaltung",
+        "user_settings":  "Einstellungen",
+        "change_password": {
+            "change_password": "Passwort ändern",
+            "change_password_for": "Passwort von {{user}} ändern",
+            "incorrect_length": "Passwörter müssen zwischen 8 und 200 Zeichen lang sein",
+            "no_match": "Das wiederholte Passwort stimmt nicht mit dem neuen Passwort überein",
+            "confirm_password": "Passwort bestätigen",
+            "enter_new_password": "Bitte geben Sie hier das neue Passwort ein",
+            "confirm_new_password": "Bitte wiederholen Sie hier das neue Passwort",
+            "new_password": "Neues Passwort",
+            "success": "Ihr Passwort wurde geändert"
+        },
+        "delete_user": {
+            "delete_user": "Benutzer {{user}} löschen",
+            "username_wrong": "Der von Ihnen angegebene Benutzername ist falsch",
+            "enter_username": "Hier den Benutzernamen eingeben"
+        },
+        "add_user": {
+            "username": "Benutzername",
+            "username_wrong": "Der Benutzername muss zwischen 4 und 20 Zeichen lang sein",
+            "add_user_description": "Einen neuen Benutzer hinzufügen",
+            "add_user": "Benutzer hinzufügen",
+            "enter_username": "Bitte geben Sie den Benutzernamen hier ein",
+            "user_language": "Bitte wählen Sie die Anzeigesprache des neuen Benutzers",
+            "one_time_password": "Ihr Einmalpasswort"
+        },
+        "enter_new_username": "Bitte geben Sie hier den Benutzernamen des neuen Benutzers ein",
+        "privilege_level": "Zugriffsberechtigung",
+        "username": "Benutzername",
+        "user": "Benutzer",
+        "admin": "Administrator",
+        "german": "Deutsch",
+        "english": "Englisch",
+        "one_time_password": "Ihr Einmalpasswort"
+    },
+
+    "login": {
+        "title": "Arkansas - Login",
+        "username": "Benutzername",
+        "password": "Passwort",
+        "login": "Einloggen"
+    },
+
+    "formFields": {
+        "datasetName": {
+            "dataset_name": "Datensatzname",
+            "enter_name": "Bitte geben Sie hier einen Datensatznamen ein",
+            "dataset_name_required": "Jeder Datensatz benötigt einen Namen"
+        },
+        "featureNames": {
+            "featureNames": "Feature-Namen",
+            "enter_featureNames": "Bitte geben Sie hier Feature-Namen ein",
+            "featureNames_required": "Jeder Datensatz benötigt Feature-Namen",
+            "empty_feature": "Feature-Namen müssen angegeben werden"
+        },
+        "datasetUpload": {
+            "file": "Datensatzdatei",
+            "file_required": "Bitte wählen Sie eine Datensatzdatei aus"
+        },
+        "datasetType":{
+            "options":{
+              "timeseries": "Zeitreihendaten",
+              "timeseries_georeferenced": "Zeitreihendaten georeferenziert",
+              "image": "Bilddaten"
+            },
+            "select_dataset_type": "Bitte wählen Sie hier ein Datensatztyp aus",
+            "dataset_type_required": "Datensatztyp muss auswählen werden"
+        }
+    },
+
+    "explainer": {
+        "run_explainer": "Erklärung starten",
+        "classifier": {
+            "title": "Klassifikatorauswahl",
+            "type": "Klassifikatortyp",
+            "compatible_dataset_type": {
+                "sub_title": "Kompatible Datensatztyp",
+                "options": {
+                    "all": "Alle Klassifikatoren",
+                    "timeseries": "Zeitreihen Klassifikatoren",
+                    "timeseries_georeferenced": "Zeitreihen georeferenziert Klassifikatoren",
+                    "image": "Bild Klassifikatoren"
+                },
+                "available_clfs": "Verfügbare Klassifikatoren"
+            },
+            "compatible_datasets": "Kompatible Datensätze",
+            "compatible_xai_models": "Kompatible XAI-Modelle",
+            "error": "Bitte wählen Sie einen Klassifikator aus"
+        },
+        "global_local": {
+            "title": "Erklärungsart",
+            "local_name": "Lokal",
+            "global_name": "Global",
+            "error": "Bitte wählen Sie eine Erklärungsart aus",
+            "local_description": "Eine lokale Erklärung erklärt die Klassifkation einer einzelnen Instanz",
+            "global_description": "Eine globale Erklärung kann die Klassifikation mehrerer Instanzen erklären"
+        },
+        "xai_model": {
+            "title": "XAI-Modell-Auswahl",
+            "parameters": "Parameter",
+            "error": "Bitte wählen Sie mindestens ein XAI-Modell aus"
+        },
+        "dataset": {
+            "title": "Datensatzauswahl",
+            "error": "Bitte wählen Sie einen Datensatz"
+        },
+        "instance": {
+            "instance_count": "Anzahl Instanzen",
+            "instance_selection": "Wählen Sie eine Instanz aus, deren Klassifikation Sie erklärt haben möchten",
+            "title": "Instanzauswahl",
+            "error": "Bitte wählen Sie eine Instanz aus"
+        },
+        "parameter": {
+            "title": "Parameterauswahl",
+            "error": "Bitte konfigurieren Sie alle Parameter",
+            "background_dataset": "Die Anzahl an Beobachtungen aus dem Hintergrunddatensatz, die für das Trainieren des XAI-Modells verwendet werden sollen. Eine große Anzahl Beobachtungen führt zu genaueren Ergebnissen, aber auch zu aufwendigeren Berechnungen.",
+            "num_slices": "Die Anzahl an Zeitabschnitten, in die die Zeitreihe aufgeteilt wird.",
+            "num_samples": "Die Größe der Daten, welche durch das randomisierte Entfernen von Zeitabschnitten aus der Zeitreihe entstehen.",
+            "replacement_method": "Die Methode zur Ersetzung der randomisiert entfernten Zeitabschnitten durch andere Datenpunkte. (Die Datenpunkte ergeben sich entweder aus dem Mittelwert einer Auswahl an Zeitabschnitten, dem Mittelwert über die gesamte Zeitreihe oder durch zufällige Datenpunkte)",
+            "num_steps": "Die Anzahl an Schritten um welche die Referenzwerte von den echten Beobachtungen abweichen."
+        },
+        "results": {
+            "submit_success": "Ihr Kommentar wurde hinzugefügt",
+            "comment": "Kommentar",
+            "submitRating": "Bewertung abgeben",
+            "processing": "Erstelle Erklärungen",
+            "timestamp": "Zeitstempel",
+            "classification": "Klassifikation",
+            "probability": "Vorhersagewahrscheinlichkeit",
+            "ground_truth": "Ground Truth",
+            "time_series_steps": "Zeitreihenschritte",
+            "relative_importance": "Relative Wichtigkeit",
+            "classification_model": "Klassifikator",
+            "xai_models": "XAI Modell(e)",
+            "dataset": "Datensatz",
+            "feature_names": "Feature-Namen",
+            "response_time": "Dauer der Erklärung",
+            "overall": "Gesamt",
+            "number_of_classifications": "Anzahl Klassifikationen",
+            "accuracy": "Genauigkeit",
+            "number_of_instances": "Anzahl Instanzen",
+            "feature_importance_plot": "Merkmalswichtigkeitsplot",
+            "divergent_plot": "Divergent Plot",
+            "features": "Features",
+            "selected_instance": "Ausgewählte Instanz",
+            "heat_plot": "Heat Plot",
+            "mapping_on_instance": "Abbildung der Slice-Wichtigkeit auf die Instanz",
+            "box_plots": "Box Plots",
+            "force_plot": "Force Plot",
+            "modify_parameter": "Parameter anpassen",
+            "error": "Klassifikationsfehler",
+            "classification_failed": "Keine der gewählten Instanzen konnte erfolgreich klassifiziert werden. Bitte wenden Sie sich an einen Administrator für weitere Unterstützung.",
+            "last_position": "Letzte Position"
+        }
+    }
+  }

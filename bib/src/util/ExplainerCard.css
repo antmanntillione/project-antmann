@@ -1,0 +1,47 @@
+.cardInactive {
+    transition: color .2s,background-color .3s,border-color .15s ease-in-out,box-shadow .3s;
+    color: black;
+    background-color: transparent;
+    /* border-color: #007bff; */
+    border-color: #179c7d;
+}
+
+.cardActive {
+    transition: color .2s,background-color .3s,border-color .15s ease-in-out,box-shadow .3s;
+    color: #fff;
+    /* background-color: #007bff; */
+    background-color: #179c7d;
+    /* border-color: #007bff; */
+    border-color: #179c7d;
+}
+
+.cardActiveClickable {
+    cursor: pointer;
+}
+
+.cardInactiveClickable {
+    cursor: pointer;
+}
+
+.cardActiveClickable:hover {
+    box-shadow: 0 0 30px rgba(33,33,33,.2);
+}
+
+.cardInactiveClickable:hover {
+    box-shadow: 0 0 30px rgba(33,33,33,.2);
+}
+
+.cardInactiveClickable:active {
+    color: #fff;
+    /* background-color: #007bff; */
+    background-color: #179c7d;
+    /* border-color: #007bff; */
+    border-color: #179c7d;
+}
+
+.cardActiveClickable:active {
+    color: black;
+    background-color: transparent;
+    /* border-color: #007bff; */
+    border-color: #179c7d;
+}

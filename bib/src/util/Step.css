@@ -1,0 +1,19 @@
+.step__number {
+    display:inline-block;
+    width:28px;
+    height:28px;
+    border:2px solid var(--secondary);
+    border-radius:50%;
+    line-height:24px;
+    text-align:center;
+    font-weight:500;
+    margin-right: 20px
+   }
+.step__number:before {
+    content:counter(form-steps);
+    counter-increment:form-steps
+}
+
+body {
+    counter-reset: form-steps;
+}

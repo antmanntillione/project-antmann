@@ -1,0 +1,324 @@
+//This is the old (currently unused Mock-API) which will get reused in our more sophisticated integration tests
+import {
+  ApiResult,
+  Classifier,
+  DatasetWithClassifier,
+  RatingStatistic,
+  Rating,
+  NewUser,
+  User,
+  Language,
+  RatingView,
+  PrivilegeLevel,
+  Instance,
+} from "./api_types";
+import { mockClassifiers } from "./classifiers";
+import { mockDatasets, mockInstanceNames } from "./datasets";
+import { mock_statistic, mock_statistic_local, mock_ratings } from "./ratings";
+import { mock_users } from "./mock_users";
+import { ais_instances, knn_instances, knn_explainations } from "./explainer";
+
+class ArkansasAPI {
+  classifiers: Array<Classifier>;
+  datasets: Array<DatasetWithClassifier>;
+  instances: Array<[string, number]>;
+
+  ais: Array<Instance>;
+
+  statistic_global: RatingStatistic;
+  statistic_local: RatingStatistic;
+  ratings: Array<Rating>;
+  users: Array<User>;
+
+  constructor() {
+    this.classifiers = mockClassifiers;
+    this.datasets = mockDatasets;
+    this.instances = mockInstanceNames;
+    this.statistic_global = mock_statistic;
+    this.statistic_local = mock_statistic_local;
+    this.ratings = mock_ratings;
+    this.users = mock_users;
+
+    this.ais = ais_instances;
+  }
+
+  async login(username: string, password: string): Promise<ApiResult<User>> {
+    if (Math.random() < 0.5) {
+      return Promise.resolve({
+        type: "success",
+        value: {
+          username: "DemoUser",
+          id: 1,
+          privilege_level: "ADMIN",
+          language: "english",
+        },
+      });
+    } else {
+      return Promise.resolve({
+        type: "error",
+        error: "Username or Password incorrect",
+      });
+    }
+  }
+
+  async getClassifiers(): Promise<ApiResult<Array<Classifier>>> {
+    return Promise.resolve({
+      type: "success",
+      value: this.classifiers,
+    });
+  }
+
+  async getDatasets(): Promise<ApiResult<Array<DatasetWithClassifier>>> {
+    return Promise.resolve({
+      type: "success",
+      value: this.datasets,
+    });
+  }
+
+  async addDataset(
+    file: File,
+    name: string,
+    metainformation: string
+  ): Promise<ApiResult<null>> {
+    if (Math.random() < 0.5) {
+      return Promise.resolve({
+        type: "success",
+        value: null,
+      });
+    } else {
+      return Promise.resolve({
+        type: "error",
+        error: "Something went wrong processing your request",
+      });
+    }
+  }
+
+  async getInstances(
+    dataset_id: number
+  ): Promise<ApiResult<Array<[string, number]>>> {
+    if (dataset_id === 352) {
+      return Promise.resolve({
+        type: "success",
+        value: this.instances,
+      });
+    } else if (dataset_id === 537) {
+      return Promise.resolve({
+        type: "success",
+        value: new Array(knn_instances.length).map((_, index) => [
+          "Instance " + index.toString(),
+          index,
+        ]),
+      });
+    } else {
+      return Promise.resolve({
+        type: "error",
+        error: "No Dataset found",
+      });
+    }
+  }
+
+  async getInstance(
+    dataset_id: number,
+    index_id: number
+  ): Promise<ApiResult<{ selected_instance: Instance }>> {
+    if (dataset_id === 537 && index_id >= 0 && index_id <= 0) {
+      return Promise.resolve({
+        type: "success",
+        value: {
+          selected_instance: knn_instances[index_id],
+        },
+      });
+    } else if (dataset_id === 352 && index_id >= 0 && index_id <= 3) {
+      return Promise.resolve({
+        type: "success",
+        value: {
+          selected_instance: this.ais[index_id],
+        },
+      });
+    } else {
+      return Promise.resolve({
+        type: "error",
+        error: "Instance not found",
+      });
+    }
+  }
+
+  async setDatasetName(id: number, newName: string): Promise<ApiResult<null>> {
+    if (Math.random() < 0.5) {
+      return Promise.resolve({
+        type: "success",
+        value: null,
+      });
+    } else {
+      return Promise.resolve({
+        type: "error",
+        error: "Something went wrong processing your request",
+      });
+    }
+  }
+
+  async deleteDataset(id: number): Promise<ApiResult<null>> {
+    if (Math.random() < 0.5) {
+      this.datasets.forEach((dataset, index) => {
+        if (dataset.id === id) this.datasets.splice(index, 1);
+      });
+      return Promise.resolve({
+        type: "success",
+        value: null,
+      });
+    } else {
+      return Promise.resolve({
+        type: "error",
+        error: "Something went wrong processing your request",
+      });
+    }
+  }
+
+  async changeCompability(
+    id: number,
+    classifiers: Array<string>
+  ): Promise<ApiResult<null>> {
+    if (Math.random() < 0.5) {
+      return Promise.resolve({
+        type: "success",
+        value: null,
+      });
+    } else {
+      return Promise.resolve({
+        type: "error",
+        error: "Something went wrong processing your request",
+      });
+    }
+  }
+
+  async getStatistics(view: RatingView): Promise<ApiResult<RatingStatistic>> {
+    if (view === "global") {
+      return Promise.resolve({
+        type: "success",
+        value: this.statistic_global,
+      });
+    } else {
+      return Promise.resolve({
+        type: "success",
+        value: this.statistic_local,
+      });
+    }
+  }
+
+  async getRatings(
+    start: number,
+    length: number,
+    view: RatingView
+  ): Promise<ApiResult<Array<Rating>>> {
+    if (view === "global") {
+      return Promise.resolve({
+        type: "success",
+        value: [...this.ratings.slice(start, start + length)],
+      });
+    } else {
+      return Promise.resolve({
+        type: "success",
+        value: [
+          ...this.ratings
+            .filter((rating) => rating.creator === "Max Mustermann")
+            .slice(start, start + length),
+        ],
+      });
+    }
+  }
+
+  async getRatingCSV() {
+    throw new Error("not implemented");
+  }
+
+  async addRating(
+    rating: number,
+    comment: string,
+    dataset: number,
+    classifier: string,
+    xai_model: string
+  ): Promise<ApiResult<null>> {
+    return Promise.resolve({
+      type: "success",
+      value: null,
+    });
+  }
+
+  async getUsers(): Promise<ApiResult<Array<User>>> {
+    return Promise.resolve({
+      type: "success",
+      value: [...this.users],
+    });
+  }
+
+  async deleteUser(id: number): Promise<ApiResult<null>> {
+    this.users.forEach((user, index) => {
+      if (user.id === id) this.users.splice(index, 1);
+    });
+
+    return Promise.resolve({
+      type: "success",
+      value: null,
+    });
+  }
+
+  async addUser(
+    username: string,
+    privilege: PrivilegeLevel,
+    language: Language
+  ): Promise<ApiResult<NewUser>> {
+    const new_user = {
+      id: this.users.length,
+      username: username,
+      privilege_level: privilege,
+      language: language,
+    };
+
+    this.users.push(new_user);
+
+    return Promise.resolve({
+      type: "success",
+      value: {
+        user: new_user,
+        one_time_password: "12345678",
+      },
+    });
+  }
+
+  async changeUserLanguage(
+    id: number,
+    lang: Language
+  ): Promise<ApiResult<null>> {
+    if (Math.random() > 0.5) {
+      this.users.forEach((user) => {
+        if (user.id === id) user.language = lang;
+      });
+      return Promise.resolve({
+        type: "success",
+        value: null,
+      });
+    }
+    return Promise.resolve({
+      type: "error",
+      error: "Something went wrong",
+    });
+  }
+
+  async changePassword(
+    id: number,
+    new_password: string
+  ): Promise<ApiResult<null>> {
+    if (Math.random() > 0.5) {
+      return Promise.resolve({
+        type: "success",
+        value: null,
+      });
+    }
+    return Promise.resolve({
+      type: "error",
+      error: "Something went wrong",
+    });
+  }
+}
+
+export const api = new ArkansasAPI();

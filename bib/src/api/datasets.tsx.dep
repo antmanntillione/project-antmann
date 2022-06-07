@@ -1,0 +1,34 @@
+//This is the old (currently unused Mock-API) which will get reused in our more sophisticated integration tests
+import { DatasetWithClassifier } from "./api_types";
+
+export const mockDatasets: Array<DatasetWithClassifier> = [
+  {
+    name: "ShipDataBritanny2019",
+    id: 352,
+    num_instances: 4,
+    feature_names: ["mmsi", "lon", "lat", "timediff", "course", "speed"],
+    num_samples: 320,
+    compatible_classifiers: [
+      ["resnet -360", "fe7c1604-489a-4bf4-9467-079d262bcd8c"],
+      ["convnet -420", "ee6fc96d-009c-49ba-b600-dd3974099290"],
+    ],
+    upload_date: "12.12.2020",
+    georeferenced: true,
+  },
+  {
+    name: "networkLoadBerlin",
+    id: 537,
+    num_instances: 1,
+    feature_names: ["frequency"],
+    num_samples: 96,
+    compatible_classifiers: [["knn", "0379b8da-c927-492e-b78f-d12ad7784419"]],
+    upload_date: "03.09.2020",
+    georeferenced: false,
+  },
+];
+
+export const mockInstanceNames: Array<[string, number]> = [
+  ["100896616", 0],
+  ["200660214", 1],
+  ["420696969", 2],
+];

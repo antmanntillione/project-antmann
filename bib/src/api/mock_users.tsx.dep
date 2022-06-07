@@ -1,0 +1,17 @@
+//This is the old (currently unused Mock-API) which will get reused in our more sophisticated integration tests
+import { User } from "./api_types";
+
+export const mock_users: Array<User> = [
+  {
+    username: "PaulMuller",
+    id: 43264635,
+    language: "german",
+    privilege_level: "USER",
+  },
+  {
+    username: "Alice_w2065",
+    id: 43097269,
+    language: "english",
+    privilege_level: "ADMIN",
+  },
+];

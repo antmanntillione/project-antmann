@@ -1,0 +1,188 @@
+{
+    "classifiers":  [
+        {
+            "name": "knn_ecg",
+            "uuid": "d0ec3bbd-ce5e-5b51-8fe6-e44f8931ebf7",
+            "framework": "SciKit",
+            "xai_models": [
+                {
+                    "name": "LimeForTime",
+                    "uuid": "00c5c2b2-b55a-52bc-96de-76db0a94a3d5",
+                    "local": true,
+                    "global": false,
+                    "parameters": [
+                        {
+                            "name": "num_samples",
+                            "type": "int",
+                            "description": {
+                                "min": 1000,
+                                "max": 5000,
+                                "step": 100,
+                                "default": 5000
+                            }
+                        },
+                        {
+                            "name": "num_slices",
+                            "type": "int",
+                            "description": {
+                                "min": 10,
+                                "max": 30,
+                                "step": 1,
+                                "default": 10
+                            }
+                        },
+                        {
+                            "name": "replacement_method",
+                            "type": "choice",
+                            "description": {
+                                "choices": [
+                                    "mean",
+                                    "noise",
+                                    "total_mean"
+                                ],
+                                "default": "noise"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "SHAP KernelExplainer",
+                    "uuid": "53a76c1c-164b-5c41-bb84-1d71664ec61c",
+                    "local": true,
+                    "global": false,
+                    "parameters": [
+                        {
+                            "name": "background_dataset",
+                            "type": "int",
+                            "description": {
+                                "min": 1000,
+                                "max": 5000,
+                                "step": 100,
+                                "default": 1000
+                            }
+                        }
+                    ]
+                }
+            ],
+            "datasets": []
+        },
+        {
+            "name": "resnet_ais",
+            "uuid": "3082937f-64ff-5dc5-847c-714f8febaee9",
+            "framework": "Tensorflow",
+            "xai_models": [
+                {
+                    "name": "LimeForTime",
+                    "uuid": "d88c0e56-e33b-5a47-9e71-e7e03a08797c",
+                    "local": true,
+                    "global": false,
+                    "parameters": [
+                        {
+                            "name": "num_samples",
+                            "type": "int",
+                            "description": {
+                                "min": 1000,
+                                "max": 5000,
+                                "step": 100,
+                                "default": 5000
+                            }
+                        },
+                        {
+                            "name": "num_slices",
+                            "type": "int",
+                            "description": {
+                                "min": 10,
+                                "max": 30,
+                                "step": 1,
+                                "default": 10
+                            }
+                        },
+                        {
+                            "name": "replacement_method",
+                            "type": "choice",
+                            "description": {
+                                "choices": [
+                                    "mean",
+                                    "total_mean"
+                                ],
+                                "default": "mean"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "SHAP DeepExplainer",
+                    "uuid": "2397026b-35a0-541d-978b-476efff56166",
+                    "local": true,
+                    "global": true,
+                    "parameters": [
+                        {
+                            "name": "background_dataset",
+                            "type": "int",
+                            "description": {
+                                "min": 1000,
+                                "max": 5000,
+                                "step": 100,
+                                "default": 1000
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "SHAP GradientExplainer",
+                    "uuid": "8ccb6cc8-be9e-5e94-b89f-aa3c5b0e675e",
+                    "local": true,
+                    "global": true,
+                    "parameters": [
+                        {
+                            "name": "background_dataset",
+                            "type": "int",
+                            "description": {
+                                "min": 1000,
+                                "max": 5000,
+                                "step": 100,
+                                "default": 1000
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Path Integrated Gradient",
+                    "uuid": "bb642152-8517-5aaa-a16e-af58c6de0b36",
+                    "local": true,
+                    "global": false,
+                    "parameters": [
+                        {
+                            "name": "num_steps",
+                            "type": "int",
+                            "description": {
+                                "min": 1000,
+                                "max": 20000,
+                                "step": 1000,
+                                "default": 10000
+                            }
+                        }
+                    ]
+                }
+            ],
+            "datasets": [
+                {
+                    "name": "AIS4",
+                    "id": 6,
+                    "num_instances": 1100,
+                    "feature_names": [
+                        "mmsi",
+                        "lon",
+                        "lat",
+                        "timediff",
+                        "speed",
+                        "course"
+                    ],
+                    "num_samples": 360,
+                    "upload_date": "2021-02-21",
+                    "geo_referenced": true
+                }
+            ]
+        }
+    ]
+}

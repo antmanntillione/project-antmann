@@ -1,0 +1,77 @@
+{
+    "datasets": [
+        {
+            "name": "AIS1",
+            "id": 2,
+            "num_instances": 1100,
+            "feature_names": [
+                "mmsi",
+                "lon",
+                "lat",
+                "timediff",
+                "speed",
+                "course"
+            ],
+            "num_samples": 360,
+            "compatible_classifiers": [],
+            "upload_date": "2021-02-21",
+            "geo_referenced": true
+        },
+        {
+            "name": "AIS2",
+            "id": 4,
+            "num_instances": 1100,
+            "feature_names": [
+                "mmsi",
+                "lon",
+                "lat",
+                "timediff",
+                "speed",
+                "course"
+            ],
+            "num_samples": 360,
+            "compatible_classifiers": [],
+            "upload_date": "2021-02-21",
+            "geo_referenced": true
+        },
+        {
+            "name": "AIS3",
+            "id": 5,
+            "num_instances": 1100,
+            "feature_names": [
+                "mmsi",
+                "lon",
+                "lat",
+                "timediff",
+                "speed",
+                "course"
+            ],
+            "num_samples": 360,
+            "compatible_classifiers": [],
+            "upload_date": "2021-02-21",
+            "geo_referenced": true
+        },
+        {
+            "name": "AIS4",
+            "id": 6,
+            "num_instances": 17,
+            "feature_names": [
+                "mmsi",
+                "lon",
+                "lat",
+                "timediff",
+                "speed",
+                "course"
+            ],
+            "num_samples": 360,
+            "compatible_classifiers": [
+                [
+                    "resnet_ais",
+                    "3082937f-64ff-5dc5-847c-714f8febaee9"
+                ]
+            ],
+            "upload_date": "2021-02-21",
+            "geo_referenced": true
+        }
+    ]
+}

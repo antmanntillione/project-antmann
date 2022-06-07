@@ -1,0 +1,142 @@
+//This is the old (currently unused Mock-API) which will get reused in our more sophisticated integration tests
+
+import { Classifier } from "./api_types";
+
+export const mockClassifiers: Array<Classifier> = [
+  {
+    name: "knn_ecg",
+    uuid: "458aa776-1431-4dfb-85ff-c5c79388576d",
+    framework: "SciKit",
+    xai_models: [
+      {
+        name: "LimeForTime",
+        uuid: "04aa78d8-6039-431d-b418-bf99bbee2ada",
+        local: true,
+        global: false,
+        parameters: [
+          {
+            name: "replacement_method",
+            type: "choice",
+            description: {
+              choices: ["mean", "noise", "total_mean"],
+              default: "mean",
+            },
+          },
+        ],
+      },
+    ],
+    datasets: [
+      {
+        name: "networkLoadBerlin",
+        id: 537,
+        num_instances: 1,
+        feature_names: ["frequency"],
+        num_samples: 96,
+        upload_date: "03.09.2020",
+        georeferenced: false,
+      },
+    ],
+  },
+  {
+    name: "ResNet-360",
+    uuid: "fe7c1604-489a-4bf4-9467-079d262bcd8c",
+    framework: "Tensorflow",
+    xai_models: [
+      {
+        name: "SHAP Deep Explainer",
+        uuid: "3d75159a-931a-4981-9d56-fcdbb6cfb9d9",
+        local: true,
+        global: true,
+        parameters: [
+          {
+            name: "background_data",
+            type: "int",
+            description: {
+              min: 1000,
+              max: 5000,
+              step: 100,
+              default: 1000,
+            },
+          },
+        ],
+      },
+      {
+        name: "SHAP Gradient Explainer",
+        uuid: "63b3b47d-605b-4b2f-a3cc-5fd08b636910",
+        local: true,
+        global: true,
+        parameters: [
+          {
+            name: "background_data",
+            type: "int",
+            description: {
+              min: 1000,
+              max: 5000,
+              step: 100,
+              default: 2000,
+            },
+          },
+        ],
+      },
+      {
+        name: "LimeForTime",
+        uuid: "4df858d8-ef0f-4345-a46d-3dc986c27b1f",
+        local: true,
+        global: false,
+        parameters: [
+          {
+            name: "replacement_method",
+            type: "choice",
+            description: {
+              choices: ["mean", "noise", "total_mean"],
+              default: "noise",
+            },
+          },
+        ],
+      },
+      {
+        name: "PIG",
+        uuid: "70e32911-4d7a-46da-910a-9db3c41c8da7",
+        local: true,
+        global: true,
+        parameters: [
+          {
+            name: "bist du fly wie adler",
+            type: "choice",
+            description: {
+              choices: ["no", "yeah brrr"],
+              default: "yeah brrr",
+            },
+          },
+        ],
+      },
+      {
+        name: "SHAP Kernel Explainer",
+        uuid: "70e32911-4d7a-46da-910a-9db3c41c8da8",
+        local: true,
+        global: false,
+        parameters: [],
+      },
+    ],
+    datasets: [
+      {
+        name: "ShipDataBritanny2019",
+        id: 352,
+        num_instances: 4,
+        feature_names: ["mmsi", "lon", "lat", "timediff", "course", "speed"],
+        num_samples: 320,
+        upload_date: "12.12.2020",
+        georeferenced: true,
+      },
+      {
+        name: "ShipDataBritanny2020",
+        id: 354,
+        num_instances: 5000,
+        feature_names: ["mmsi", "lon", "lat", "timediff", "course", "speed"],
+        num_samples: 320,
+        upload_date: "13.12.2020",
+        georeferenced: true,
+      },
+    ],
+  },
+];
