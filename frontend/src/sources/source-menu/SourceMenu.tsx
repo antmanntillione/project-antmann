@@ -1,12 +1,8 @@
 import "./SourceMenu.css"
-
-import Table from "react-bootstrap/Table"
+import { Table } from "react-bootstrap"
 import SourceItem from "./SourceItem"
 import { useState } from "react"
-
-interface SourceMenuInterface {
-  data: any
-}
+import { SourceMenuInterface, Source } from "../models/models"
 
 const SourceMenu = (props: SourceMenuInterface) => {
 
@@ -18,23 +14,23 @@ const SourceMenu = (props: SourceMenuInterface) => {
       <thead>
         <tr>
           <th>Index</th>
+          <th>ID</th>
+          <th>Document Type</th>
           <th>Title</th>
+          <th>Main Author</th>
+          <th>Creation Date</th>
           <th>URL</th>
-          <th>Author</th>
-          <th>Publisher</th>
+          <th>Reviewed</th>
           <th></th>
         </tr>
       </thead>
       <tbody>
-        {currentSources.map((item: any, index: any) => {
+        {currentSources.map((item: Source, index: any) => {
           return <SourceItem
             key={index}
-            id={item.id}
-            title={item.title}
-            url={item.url}
-            author={item.author}
-            publisher={item.publisher}
-            accordion_index={index}
+            source_menu_index={index}
+            data={item}
+            triggerShowConentMenu={props.triggerShowConentMenu}
           />
         })}
       </tbody>

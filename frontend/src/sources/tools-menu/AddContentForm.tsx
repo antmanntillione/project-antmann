@@ -49,23 +49,51 @@ const initialState = {
 interface AddContentFormInterface {
     show: boolean
     onHide: any
-    addContent?: any
+    addContent: any
 }
 
 const AddContentForm = (props: AddContentFormInterface) => {
 
+    const [validated, setValidated] = useState(false)
     const [formState, dispatch] = useReducer(reducer, initialState)
-    const handleFormReset = () => dispatch({ type: "reset" })
+    const [reloadTrigger, setReloadTrigger] = useState(0) //change this state to force relaoding this component (after form reset and form cancel buttons)
 
-    const handleFormSubmit = () => {
-
-        //after validation
-        props.addContent(formState) //gets executed in API file
-
-        //hide and reset form
-        props.onHide(false)
-        handleFormReset()
+    const handleFormReset = () => {
+        dispatch({ type: "reset" })
+        setValidated(false);
     }
+    const handleFormCancel = () => {
+        props.onHide()
+        //setValidated(false);
+    }
+
+    const handleFormSubmit = (event: any) => {
+        event.preventDefault();
+
+        //validation
+        const form = event.currentTarget
+        if (form.checkValidity() == false) {
+            event.stopPropagation();
+
+        } else {
+            setValidated(true)
+
+            //after validation
+            props.addContent(formState) //gets executed in API file
+
+            //hide and reset form
+            props.onHide(false)
+            handleFormReset()
+        }
+
+        //form validation doesnt work right, if this doesnt stand here, but why ?!
+        setValidated(true);
+    }
+
+    /*
+    <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+    <Form.Control.Feedback type="invalid">Please enter a title.</Form.Control.Feedback>
+    */
 
     return (
         <>
@@ -74,7 +102,7 @@ const AddContentForm = (props: AddContentFormInterface) => {
                     <Modal.Title>Add your content!</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <Form>
+                    <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
                         <Form.Group className="mb-3">
                             <Container>
                                 <Row className="g-2">
@@ -83,6 +111,7 @@ const AddContentForm = (props: AddContentFormInterface) => {
                                     </Col>
                                     <Col>
                                         <Form.Select
+                                            required
                                             onChange={(event: any) => { dispatch({ type: "add", value: event.target.value }) }}
                                             value={formState.add}
                                         >
@@ -102,6 +131,7 @@ const AddContentForm = (props: AddContentFormInterface) => {
                                     </Col>
                                     <Col>
                                         <Form.Select
+                                            required
                                             onChange={(event: any) => { dispatch({ type: "method", value: event.target.value }) }}
                                             value={formState.method}
                                         >
@@ -116,6 +146,7 @@ const AddContentForm = (props: AddContentFormInterface) => {
                         <Form.Group className="mb-3">
                             <FloatingLabel label="Enter the source URL">
                                 <Form.Control
+                                    required
                                     onChange={(event: any) => { dispatch({ type: "url", value: event.target.value }) }}
                                     value={formState.url}
                                     placeholder=""
@@ -131,6 +162,7 @@ const AddContentForm = (props: AddContentFormInterface) => {
                                     </Col>
                                     <Col>
                                         <Form.Select
+                                            required
                                             onChange={(event: any) => { dispatch({ type: "backup", value: event.target.value }) }}
                                             value={formState.backup}
                                         >
@@ -147,15 +179,19 @@ const AddContentForm = (props: AddContentFormInterface) => {
                         <Form.Group className="mb-3">
                             <FloatingLabel label="Enter a title">
                                 <Form.Control
+                                    required
                                     onChange={(event: any) => { dispatch({ type: "title", value: event.target.value }) }}
                                     value={formState.title}
                                     placeholder=""
-                                />                    </FloatingLabel>
+                                />
+
+                            </FloatingLabel>
                         </Form.Group>
 
                         <Form.Group className="mb-3">
                             <FloatingLabel label="Who is the sources main author?">
                                 <Form.Control
+                                    required
                                     onChange={(event: any) => { dispatch({ type: "author", value: event.target.value }) }}
                                     value={formState.author}
                                     placeholder=""
@@ -166,6 +202,7 @@ const AddContentForm = (props: AddContentFormInterface) => {
                         <Form.Group className="mb-3">
                             <FloatingLabel label="Who is the sources publisher?">
                                 <Form.Control
+                                    required
                                     onChange={(event: any) => { dispatch({ type: "publisher", value: event.target.value }) }}
                                     value={formState.publisher}
                                     placeholder=""
@@ -181,6 +218,7 @@ const AddContentForm = (props: AddContentFormInterface) => {
                                     </Col>
                                     <Col>
                                         <Form.Select
+                                            required
                                             onChange={(event: any) => { dispatch({ type: "doctype", value: event.target.value }) }}
                                             value={formState.doctype}
                                         >
@@ -203,6 +241,7 @@ const AddContentForm = (props: AddContentFormInterface) => {
                                     </Col>
                                     <Col>
                                         <DatePicker
+                                            required
                                             closeCalendar={true}
                                             value={formState.date}
                                             showLeadingZeros={true}
@@ -214,20 +253,40 @@ const AddContentForm = (props: AddContentFormInterface) => {
                             </Container>
                         </Form.Group>
 
+                        <Form.Group className="mb-3">
+                            <Form.Check
+                                required
+                                label="Agree to terms and conditions"
+                                feedback="You must agree before submitting."
+                                feedbackType="invalid"
+                            />
+                        </Form.Group>
+
+                        <Form.Group className="mb-3">
+                            <Container>
+                                <Row className="mb-3">
+                                    <Col>
+                                        <Button variant="danger" onClick={handleFormCancel}>
+                                            Cancel
+                                        </Button>
+                                    </Col>
+                                    <Col>
+                                        <Button variant="secondary" onClick={handleFormReset}>
+                                            Reset
+                                        </Button>
+                                    </Col>
+                                    <Col>
+                                        <Button variant="primary" type="submit">
+                                            Add Content
+                                        </Button>
+                                    </Col>
+                                </Row>
+                            </Container>
+                        </Form.Group>
+
                     </Form>
                 </Modal.Body>
 
-                <Modal.Footer>
-                    <Button variant="secondary" onClick={handleFormReset}>
-                        Reset
-                    </Button>
-                    <Button variant="danger" onClick={props.onHide}>
-                        Cancel
-                    </Button>
-                    <Button variant="primary" onClick={handleFormSubmit}>
-                        Add Content
-                    </Button>
-                </Modal.Footer>
             </Modal>
         </>
     );

@@ -1,20 +1,24 @@
 import "./ContentMenu.css"
-
+import { Accordion } from "react-bootstrap"
 import SourceMenu from "../source-menu/SourceMenu"
 import SourceContentMenu from "../source-content-menu/SourceContentMenu"
 import ThesisMenu from "../thesis-menu/ThesisMenu"
-
-import Container from "react-bootstrap/Container"
-import Row from "react-bootstrap/Row"
-import Col from "react-bootstrap/Col"
-
-import Accordion from "react-bootstrap/Accordion"
+import { useState } from "react"
+import { Source } from "../models/models"
 
 interface ContentMenuInterface {
   sourcesData: any
 }
 
 const ContentMenu = (props: ContentMenuInterface) => {
+
+  const [currentDataInSourceContentMenu, setCurrentSourcesMenuData] = useState<Source | null>(null)
+
+
+  function triggerShowConentMenu(data: Source) {
+    setCurrentSourcesMenuData(data)
+  }
+
   return (
     <><Accordion defaultActiveKey="0">
       <Accordion.Item eventKey="0">
@@ -22,15 +26,15 @@ const ContentMenu = (props: ContentMenuInterface) => {
           Sources Menu
         </Accordion.Header>
         <Accordion.Body>
-          <SourceMenu data={props.sourcesData}/>
+          <SourceMenu data={props.sourcesData} triggerShowConentMenu={triggerShowConentMenu} />
         </Accordion.Body>
       </Accordion.Item>
-      <Accordion.Item eventKey="1">
+      <Accordion.Item eventKey="0">
         <Accordion.Header>
           Source Content Menu
         </Accordion.Header>
         <Accordion.Body>
-          <SourceContentMenu />
+          <SourceContentMenu data={currentDataInSourceContentMenu}/>
         </Accordion.Body>
       </Accordion.Item>
       <Accordion.Item eventKey="2">
