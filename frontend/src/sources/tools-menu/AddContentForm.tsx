@@ -29,11 +29,12 @@ const reducer = (state: any, action: any) => {
         case "date":
             return { ...state, date: action.value }
         case "reset":
-            return initialState
+            return initialFormState
     }
 }
 
-const initialState = {
+//the form produces states of this format:
+const initialFormState = {
     key: 0,
     add: "source",
     method: "manual",
@@ -43,7 +44,7 @@ const initialState = {
     author: "",
     publisher: "",
     doctype: "webpage",
-    date: new Date("Feb 2 2022")
+    date: new Date()
 }
 
 interface AddContentFormInterface {
@@ -55,7 +56,7 @@ interface AddContentFormInterface {
 const AddContentForm = (props: AddContentFormInterface) => {
 
     const [validated, setValidated] = useState(false)
-    const [formState, dispatch] = useReducer(reducer, initialState)
+    const [formState, dispatch] = useReducer(reducer, initialFormState)
     const [reloadTrigger, setReloadTrigger] = useState(0) //change this state to force relaoding this component (after form reset and form cancel buttons)
 
     const handleFormReset = () => {

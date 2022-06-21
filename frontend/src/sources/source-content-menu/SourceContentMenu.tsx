@@ -1,16 +1,22 @@
 import './SourceContentMenu.css';
 import { SourceContentMenuInterface } from "../models/models"
-import { isPropertySignature } from 'typescript';
+import { Button, Card, Container, Row, Col } from "react-bootstrap"
 
 const SourceContentMenu = (props: SourceContentMenuInterface) => {
   return (
     <>
+
       {props.data === null
         ? <div>Please select a source.</div>
-        : <object type="text/html" data={props.data.url}
-          style={{ width: '100%', height: '100%' }}></object>
+        :
+        <>
+          <Button href={props.data.url} target="_blank" variant="light">
+            Open site in a new tab
+          </Button>
+          <object type="text/html" data={props.data.url}
+            className={"webframe"}></object>
+        </>
       }
-
     </>
   );
 }

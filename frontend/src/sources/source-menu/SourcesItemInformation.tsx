@@ -1,6 +1,6 @@
 import "./SourcesItemInformation.css"
 import { Card, Table } from "react-bootstrap"
-import { Source } from "../models/models"
+import { Source } from "../models/source-models"
 
 interface SourcesItemInformationInterface {
     data: Source
@@ -17,7 +17,7 @@ const SourcesItemInformation = (props: SourcesItemInformationInterface) => {
                     <tbody>
                         <tr>
                             <td>Main Publisher</td>
-                            <td>{props.data.main_publisher}</td>
+                            <td></td>
                         </tr>
                         <tr>
                             <td>Additional Information</td>

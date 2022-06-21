@@ -2,7 +2,8 @@ import "./SourceMenu.css"
 import { Table } from "react-bootstrap"
 import SourceItem from "./SourceItem"
 import { useState } from "react"
-import { SourceMenuInterface, Source } from "../models/models"
+import { SourceMenuInterface } from "../models/models"
+import {Source} from "../models/source-models"
 
 const SourceMenu = (props: SourceMenuInterface) => {
 
@@ -13,7 +14,6 @@ const SourceMenu = (props: SourceMenuInterface) => {
     <Table striped hover>
       <thead>
         <tr>
-          <th>Index</th>
           <th>ID</th>
           <th>Document Type</th>
           <th>Title</th>
@@ -28,9 +28,8 @@ const SourceMenu = (props: SourceMenuInterface) => {
         {currentSources.map((item: Source, index: any) => {
           return <SourceItem
             key={index}
-            source_menu_index={index}
             data={item}
-            triggerShowConentMenu={props.triggerShowConentMenu}
+            triggerShowContentMenu={props.triggerShowContentMenu}
           />
         })}
       </tbody>

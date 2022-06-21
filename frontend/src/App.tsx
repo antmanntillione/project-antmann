@@ -17,7 +17,7 @@ function App() {
   const [currentSourcesMenuData, setCurrentSourcesMenuData] = useState([])
 
   const addContent = (newContent: any) => {
-    api.sendNewContent(newContent)
+    api.addNewSource(newContent)
     setNum(num => num + 1)
   }
 
