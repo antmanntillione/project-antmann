@@ -20,15 +20,8 @@ export interface Source2 {
 }
 
 export interface Source {
-    index: number;
-    url: string;
-    quoted_in: string[];
-    quotes: string[];
-    first_version: string[];
-    is_reviewed: boolean;
-    is_a_copy: boolean;
-    add_to_app_date: Date;
     main_information: Main_Information;
+    meta_information: Meta_Information; 
     additional_information: Additional_Information;
 }
 
@@ -40,9 +33,26 @@ interface Main_Information {
     creation_date: Date; 
 }
 
+interface Meta_Information {
+    index: number;
+    url: string;
+    quoted_in: string[];
+    quotes: string[];
+    first_version: string[];
+    is_reviewed: boolean;
+    is_a_copy: boolean;
+    add_to_app_date: Date;
+}
+
 interface Additional_Information {
+    content: object
+}
+
+/*
+interface Additional_Information2 {
     last_update_date: Date | null;
     additional_authors: string[];
     interviewers: string[];
     interviewees: string[]
 }
+*/

@@ -18,14 +18,15 @@ const SourceItem = (props: SourceItemInterface) => {
           }}>Link</a>
   */
 
+  let date = props.data.main_information.creation_date
   return (
     <>
       <tr>
-        <td>{props.data.index}</td>
+        <td>{props.data.meta_information.index}</td>
         <td>{props.data.main_information.document_type}</td>
         <td>{props.data.main_information.title}</td>
         <td>{props.data.main_information.main_author}</td>
-        <td>{props.data.main_information.creation_date.toString()}</td>
+        <td>{`${date.getDay().toString().padStart(2,"0")}.${date.getMonth().toString().padStart(2,"0")}.${date.getFullYear().toString()}`}</td>
         <td>
           <Button variant="outline-primary" onClick={() => {
             props.triggerShowContentMenu(props.data)
@@ -34,7 +35,7 @@ const SourceItem = (props: SourceItemInterface) => {
             Show Site below
           </Button>
         </td>
-        <td>{props.data.is_reviewed ? "Yes" : "No"}</td>
+        <td>{props.data.meta_information.is_reviewed ? "Yes" : "No"}</td>
         <td>
           <Button variant="outline-primary" onClick={accordionButtonHandler}>
             More Info

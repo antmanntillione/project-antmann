@@ -10,10 +10,10 @@ const SourceContentMenu = (props: SourceContentMenuInterface) => {
         ? <div>Please select a source.</div>
         :
         <>
-          <Button href={props.data.url} target="_blank" variant="light">
+          <Button href={props.data.meta_information.url} target="_blank" variant="light">
             Open site in a new tab
           </Button>
-          <object type="text/html" data={props.data.url}
+          <object type="text/html" data={props.data.meta_information.url}
             className={"webframe"}></object>
         </>
       }

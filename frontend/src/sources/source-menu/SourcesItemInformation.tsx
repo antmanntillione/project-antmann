@@ -7,23 +7,29 @@ interface SourcesItemInformationInterface {
 }
 
 const SourcesItemInformation = (props: SourcesItemInformationInterface) => {
-    const obj = { 1: 1, 2: 2, 3: 3 }
-    const keys2 = Object.keys(obj)
-    const values2 = Object.values(obj)
+    let addInfoContent = props.data.additional_information.content
+    let addInfoKeys = Object.keys(addInfoContent)
+    let addInfoValues = Object.values(addInfoContent)
+
     return (
         <>
             <Card>
                 <Table>
                     <tbody>
-                        <tr>
-                            <td>Main Publisher</td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>Additional Information</td>
-                            <td>{JSON.stringify(props.data.additional_information)}</td>
-                        </tr>
-                       
+                        <>
+                            <tr>
+                                <td>Publisher</td>
+                                <td>{props.data.main_information.publisher}</td>
+                            </tr>
+                            {addInfoKeys.length != 0 &&
+                                addInfoKeys.map((_, i) => {
+                                    return (<tr key={i}>
+                                        <td>{addInfoKeys[i]}</td>
+                                        <td>{addInfoValues[i]}</td>
+                                    </tr>)
+                                })
+                            }
+                        </>
                     </tbody>
                 </Table>
             </Card>

@@ -11,7 +11,8 @@ import SearchBar from "./SearchBar";
 import AddContent from "./AddContent"
 
 interface ToolsMenuInterface {
-    addContent?: any
+    addContent: any;
+    triggerSearch: any
 }
 
 const ToolsMenu = (props: ToolsMenuInterface) => {
@@ -25,7 +26,7 @@ const ToolsMenu = (props: ToolsMenuInterface) => {
                     <Container>
                         <Row>
                             <Col xs={12} md={8}>
-                                <SearchBar />
+                                <SearchBar triggerSearch={props.triggerSearch}/>
                             </Col>
                             <Col xs={6} md={4}>
                                 <AddContent addContent={props.addContent}/>

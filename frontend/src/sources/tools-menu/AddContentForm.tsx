@@ -44,7 +44,8 @@ const initialFormState = {
     author: "",
     publisher: "",
     doctype: "webpage",
-    date: new Date()
+    date: new Date(),
+    additional_content: {} //any additional stuff shall be written here (flexible additional information)
 }
 
 interface AddContentFormInterface {
@@ -90,11 +91,6 @@ const AddContentForm = (props: AddContentFormInterface) => {
         //form validation doesnt work right, if this doesnt stand here, but why ?!
         setValidated(true);
     }
-
-    /*
-    <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
-    <Form.Control.Feedback type="invalid">Please enter a title.</Form.Control.Feedback>
-    */
 
     return (
         <>
